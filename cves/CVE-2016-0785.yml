@@ -38,9 +38,9 @@ description_instructions: |
   Rewrite this description in your own words. Make it interesting and easy to
   read to anyone with some programming experience. We can always pull up the NVD
   description later to get more technical.
-  Try to still be specific in your description, but remove Chromium-specific
+  Try to still be specific in your description, but remove Struts-specific
   stuff. Remove references to versions, specific filenames, and other jargon
-  that outsiders to Chromium would not understand. Technology like "regular
+  that outsiders to Struts would not understand. Technology like "regular
   expressions" is fine, and security phrases like "invalid write" are fine to
   keep too.
 description:
@@ -97,17 +97,17 @@ discovered:
     How was this vulnerability discovered?
     Go to the bug report and read the conversation to find out how this was
     originally found. Answer in longform below in "answer", fill in the date in
-    YYYY-MM-DD, and then determine if the vulnerability was found by a Google
+    YYYY-MM-DD, and then determine if the vulnerability was found by a Apache
     employee (you can tell from their email address). If it's clear that the
     vulenrability was discovered by a contest, fill in the name there.
     The "automated" flag can be true, false, or nil.
-    The "google" flag can be true, false, or nil.
+    The "apache" flag can be true, false, or nil.
     If there is no evidence as to how this vulnerability was found, then you may
     leave the entries blank except for "answer". Write down where you looked in "answer".
   answer:
   date:
   automated:
-  google:
+  apache:
   contest:
 
 subsystem:
@@ -187,6 +187,6 @@ mistakes:
     Look at the CWE entry for this vulnerability and examine the mitigations
     they have written there. Are they doing those? Does the fix look proper?
     Use those questions to inspire your answer. Don't feel obligated to answer
-    every one. Write a thoughtful entry here that those ing the software
+    every one. Write a thoughtful entry here that those in the software
     engineering industry would find interesting.
   answer:
