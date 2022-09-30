@@ -57,4 +57,33 @@ For each case study, look for new vulnerabilities.
 
 ## `vhp loadcommits`
 
-From within each `*-vulnerabilities` repo, run 
+You'll do this locally, but you'll need the source repo cloned. Most of the projects that's not a problem, but chromium is quite big. 
+
+Alternatively, you can use our `artifacts` server or RIT's Research Computing Cluster. Andy can show you how those work. Tends to run much much faster on our servers. 
+
+* `cd` to the root of each `*-vulnerabilities` repo
+* Make sure you have the latest source repo. A clean `git clone` can sometimes be easier than `git pull` if the repo is huge
+* Run `vhp loadcommits` to update gitlog.json
+* Inspect the output that everything is as you think it is
+* Check the size of gitlog.json before and after - did it jump way up in size? There might be a mega-commit in there - file a bug and we'll fix that.
+* Commit to the `dev` branch of the vulnerabilties repo
+* Push to GitHub
+* Make sure the CI builds properly for the specs and `data:all`
+
+
+## `vhp weeklies`
+
+Alternatively, you can use our `artifacts` server or RIT's Research Computing Cluster. Andy can show you how those work. Tends to run much much faster on our servers. 
+
+* `cd` to the root of each `*-vulnerabilities` repo
+* Make sure you have the latest source repo. A clean `git clone` can sometimes be easier than `git pull` if the repo is huge
+* Run `vhp weeklies `. This one can take a while - a few minutes to sometimes overnight.
+* Inspect the output that everything is as you think it is
+* Check the size of gitlog.json before and after - did it jump way up in size? There might be a mega-commit in there - file a bug and we'll fix that.
+* Commit to the `dev` branch of the vulnerabilties repo
+* Push to GitHub
+* Make sure the CI builds properly for the specs and `data:all`
+
+## VCC identifying
+
+Documentation TBD, but you'll be running archeogit on the new CVEs and it'll update all the ymls with their potential VCCs.
