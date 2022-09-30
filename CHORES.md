@@ -11,40 +11,40 @@ Copy this template into the issue tracker for each week.
     - [ ] httpd: `vhp loadcommits`
     - [ ] httpd: `vhp weeklies`
     - [ ] httpd: update releases and any other major project news
-  - [ ] ffmpeg: New vulnerabilities
+- [ ] ffmpeg: New vulnerabilities
     - [ ] ffmpeg: `git pull` on the main repo
     - [ ] ffmpeg: `vhp loadcommits`
     - [ ] ffmpeg: `vhp weeklies`
     - [ ] ffmpeg: update releases and any other major project news
-  - [ ] chromium: New vulnerabilities
+- [ ] chromium: New vulnerabilities
     - [ ] chromium: `git pull` on the main repo
     - [ ] chromium: `vhp loadcommits`
     - [ ] chromium: `vhp weeklies`
     - [ ] chromium: update releases and any other major project news
-  - [ ] django: New vulnerabilities
+- [ ] django: New vulnerabilities
     - [ ] django: `git pull` on the main repo
     - [ ] django: `vhp loadcommits`
     - [ ] django: `vhp weeklies`
     - [ ] django: update releases and any other major project news
-  - [ ] struts: New vulnerabilities
+- [ ] struts: New vulnerabilities
     - [ ] struts: `git pull` on the main repo
     - [ ] struts: `vhp loadcommits`
     - [ ] struts: `vhp weeklies`
     - [ ] struts: update releases and any other major project news
-  - [ ] tomcat: New vulnerabilities
+- [ ] tomcat: New vulnerabilities
     - [ ] tomcat: `git pull` on the main repo
     - [ ] tomcat: `vhp loadcommits`
     - [ ] tomcat: `vhp weeklies`
     - [ ] tomcat: update releases and any other major project news
-  - [ ] systemd: New vulnerabilities
+- [ ] systemd: New vulnerabilities
     - [ ] systemd: `git pull` on the main repo
     - [ ] systemd: `vhp loadcommits`
     - [ ] systemd: `vhp weeklies`
     - [ ] systemd: update releases and any other major project news
-  - [ ] vhp: if any of the above operations fails, create a bug for it on the corresponding `*-vulnerabiltiies` repository.
-  - [ ] vhp: `rails data:clear data:all` warnings documented in issues
-  - [ ] vhp: `rails data:clear data:all` does not break
-  - [ ] vhp: `vhp` shepherd tools - any bugs or feature ideas?
+- [ ] vhp: if any of the above operations fails, create a bug for it on the corresponding `*-vulnerabiltiies` repository.
+- [ ] vhp: `rails data:clear data:all` warnings documented in issues
+- [ ] vhp: `rails data:clear data:all` does not break
+- [ ] vhp: `vhp` shepherd tools - any bugs or feature ideas?
 
 ## Check for New Vulnerabilities
 
