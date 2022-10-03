@@ -1,0 +1,79 @@
+name: Tomcat
+fullname: Apache Tomcat
+subdomain: tomcat
+bg_color: '#d2a41f'
+fg_color: '#d2a41f'
+project_url: http://tomcat.apache.org/
+description: |
+  "The Apache Tomcat® software is an open source implementation of the Java Servlet, JavaServer Pages, Java Expression Language and Java WebSocket technologies" -http://tomcat.apache.org/
+git_commit_url_prefix: https://github.com/apache/tomcat/commit/
+github_search_url_prefix: https://github.com/apache/tomcat/search?utf8=✓&q=
+github_edit_cve_url_prefix: https://github.com/VulnerabilityHistoryProject/tomcat-vulnerabilities/edit/dev/cves/
+vulnerabilities_description: |
+  These vulnerabilities are reported by the Apache Tomcat team [on their website](http://tomcat.apache.org/security.html)
+developers_description: |
+  The following is a list of developers who are involved in code that was found to be vulnerable. Specifically, developers end up here if they were the author of a commit to code that was, at some point in time, fixed for a vulnerability. Note that this is NOT a comprehensive list.
+
+# If a filepath matches this expression it will be flagged in the database as a test file
+test_regex:
+  - test
+
+# A file name that ends with this string is considered to be source code
+# The way I found these was to do this at the root of the git repo
+#
+# find -type f | cut -c 3- | sed 's/.*\.//' | sort | uniq > ~/tomcat_exts.txt
+#
+# I just did the tomcat/ master repo, not the tomcat55 and tomcat80 repos too
+#
+# Then filtered by hand. Remove anything compressed, binary, dev-tools, etc.
+source_code_extensions:
+  - .bat
+  - .bmp
+  - .bnd
+  - .br
+  - .class
+  - .classpath
+  - .ContainerProvider
+  - .css
+  - .default
+  - .dia
+  - .dtd
+  - .html
+  - .idx
+  - .iml
+  - .java
+  - .jj
+  - .jjt
+  - .jks
+  - .json
+  - .jsp
+  - .jspf
+  - .jspx
+  - .launch
+  - .license
+  - .manifest
+  - .md
+  - .MF
+  - .nsi
+  - .pack
+  - .pem
+  - .pl
+  - .policy
+  - .pom
+  - .project
+  - .properties
+  - .Dockerfile
+  - .sample
+  - .sh
+  - .shtml
+  - .svg
+  - .tag
+  - .tagx
+  - .tasks
+  - .tld
+  - .txt
+  - .woff
+  - .xhtml
+  - .xml
+  - .xsd
+  - .xsl
