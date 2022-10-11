@@ -10,11 +10,11 @@ yaml_instructions: |
   indent by two spaces
 
   For readability, we hard-wrap multi-line strings at 80 characters. This is
-  not absolutely required, but appreciated.
+  not required, but appreciated.
 curated_instructions: |
   If you are manually editing this file, then you are "curating" it.
 
-  Set the version number that you were given in the instructions.
+  Set the version number that you were given in your instructions.
 
   This will enable additional editorial checks on this file to make sure you
   fill everything out properly. If you are a student, we cannot accept your work
@@ -66,10 +66,16 @@ bounty:
   url:
 reviews: []
 bugs_instructions: |
-  What bugs and/or pull requests are involved in this vulnerability?
+  What bugs are involved in this vulnerability?
 
-  For systemd, this is typically their GitHub issues, but could also include
-  bugs from other databases. Put a URL instead of a single number.
+  Please list bug IDs to https://bugzilla.kernel.org/
+
+  Bug ID's can appear in several places:
+    * Mentioned in commit messages
+    * Mentioned in mailing list discussions
+    * References from NVD entry
+    * Various other places
+
 bugs: []
 fixes_instructions: |
   Please put the commit hash in "commit" below.
@@ -172,7 +178,6 @@ specification:
       * bug reports
       * security advisories
       * commit message
-      * pull request
       * mailing lists
       * anything else
 
@@ -182,21 +187,27 @@ specification:
   answer:
 subsystem:
   question: |
-    What subsystems was the mistake in? These are subsystems WITHIN systemd
+    What subsystems was the mistake in? These are WITHIN linux kernel
 
-    Two areas to look:
+    Determining the subsystem is a subjective task. This is to help us group
+     similar vulnerabilities, so choose a subsystem that other vulnerabilities would be in. Y
+
+    Some areas to look for pertinent information:
       - Bug labels
       - Directory names
+      - How developers refer to an area of the system in comments,
+        commit messages, etc.
 
     Look at the path of the source code files code that were fixed to get
     directory names. Look at comments in the code. Look at the bug reports how
     the bug report was tagged.
 
-    Example systemd subsystems are:
-      * fsck
-      * apparmor
-      * fstab
-      * sd-daemon
+    Example linux kernel subsystems are:
+      * drivers
+      * crypto
+      * fs
+      * net
+      * lib
 
     Name should be:
       * all lowercase English letters
@@ -216,6 +227,13 @@ interesting_commits:
 
     Use this to specify any commits you think are notable in some way, and
     explain why in the note.
+
+    Example interesting commits:
+      * Mentioned as a problematic commit in the past
+        e.g. "This fixes regression in commit xys"
+      * A significant rewrite in the git history
+      * Other commits that fixed a similar issue as this vulnerability
+      * Anything else you find interesting.
   commits:
   - commit:
     note:
