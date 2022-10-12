@@ -22,10 +22,12 @@ jobs:
     #############
     - name: Rerun but only failures, save to file
       if: ${{ failure() }}
-      id: rpsec_failures
       run: |
         rspec --only-failures --format documentation --out tmp/rspec.txt
-        echo "::set-output name=rspec_txt::$(cat tmp/rspec.txt)"
+    - name: Save rspec failure output to GH Actions outputs
+      if: ${{ failure() }}
+      id: rpsec_failures
+      run: echo "::set-output name=rspec_txt::$(cat tmp/rspec.txt)"
     - name: Report YML checking failures via PR comment
       if: ${{ failure() }}
       uses: thollander/actions-comment-pull-request@v1
@@ -33,8 +35,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         comment_includes:
         message: |
-          Beep boop I'm a bot. Looks like your VHP curation had some problems. Maybe your YML syntax is wrong, maybe you haven't finished the
-          curation.
+          Beep boop I'm a bot. Looks like your VHP curation had some problems. Maybe your YML syntax is wrong, maybe you haven't finished the curation.
 
           Please click on the "Details" link below and check the output from our YML editorial checkers.
 
