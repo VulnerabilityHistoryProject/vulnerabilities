@@ -8,8 +8,14 @@ on:
 jobs:
   yml_editorial_checkers:
     runs-on: ubuntu-latest
-    container: vulnerabilityhistory/curations:latest
+    container:
+      image: vulnerabilityhistory/curations:latest
+      volumes:
+        - /:/
     steps:
-    - uses: actions/checkout@v2
+    - run: pwd
+    - uses: actions/checkout@v3
+      with:
+       fetch-depth: 1
     - name: Run YML and editorial checkers
       run: rspec
