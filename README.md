@@ -6,7 +6,7 @@ This repository is the source of truth for the vulnerabilityhistory.org manual c
 
 # Docker Build
 
-To build the new docker image, run:
+To build and push the new docker image, run:
 
 ```
 $ docker build --tag vulnerabilityhistory/curations:latest .
