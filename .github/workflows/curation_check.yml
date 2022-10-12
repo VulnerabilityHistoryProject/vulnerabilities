@@ -22,20 +22,41 @@ jobs:
     #############
     - name: Rerun but only failures, save to file
       if: ${{ failure() }}
-      run: rspec --only-failures --out tmp/rspec.txt
-    - name: Read tmp/rspec.txt file into output
-      if: ${{ failure() }}
       id: rpsec_failures
-      run: echo "::set-output name=rspec_txt::$(cat tmp/rspec.txt)"
+      run: |
+        rspec --only-failures --format documentation --out tmp/rspec.txt
+        echo "::set-output name=rspec_txt::$(cat tmp/rspec.txt)"
     - name: Report YML checking failures via PR comment
       if: ${{ failure() }}
       uses: thollander/actions-comment-pull-request@v1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        comment_includes:
         message: |
-          Beep boop I'm a bot. Looks like your VHP curation had the following problems...
+          Beep boop I'm a bot. Looks like your VHP curation had some problems. Maybe your YML syntax is wrong, maybe you haven't finished the
+          curation.
 
-          ${{ steps.outputs.rpsec_failures.rspec_txt }}
+          Please click on the "Details" link below and check the output from our YML editorial checkers.
+
+          ${{ steps.rpsec_failures.outputs.rspec_txt }}
+
+    #############
+    # IF suc #
+    #############
+    - name: Report YML checking success via PR comment
+      if: ${{ success() }}
+      uses: thollander/actions-comment-pull-request@v1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        comment_includes: Beep boop I'm a bot.
+        message: |
+          Beep boop I'm a bot. Looks like your curation is valid!
+
+          Make sure that you've updated `curation_level` to the level you were instructed. This ensures you finished the work we expected.
+
+          If so, then you're done! Thank you so much for your volunteer work.
+
+              -The VHP Team
 
 
 
