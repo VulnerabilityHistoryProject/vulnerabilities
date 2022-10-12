@@ -35,7 +35,9 @@ jobs:
         message: |
           Beep boop I'm a bot. Looks like your VHP curation had the following problems...
 
-          ${{ steps.rpsec_failures.rspec_txt }}
+          ${{ steps.outputs.rpsec_failures.rspec_txt }}
+
+
 
 
 
