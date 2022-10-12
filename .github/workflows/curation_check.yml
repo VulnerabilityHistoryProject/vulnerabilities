@@ -21,12 +21,12 @@ jobs:
     # IF FAILED #
     #############
     - name: Rerun but only failures, save to file
-        if: ${{ failure() }}
-        run: rspec --only-failures --out tmp/rspec.txt
+      if: ${{ failure() }}
+      run: rspec --only-failures --out tmp/rspec.txt
     - name: Read tmp/rspec.txt file into output
-        if: ${{ failure() }}
-        id: rpsec_failures
-        run: echo "::set-output name=rspec_txt::$(cat tmp/rspec.txt)"
+      if: ${{ failure() }}
+      id: rpsec_failures
+      run: echo "::set-output name=rspec_txt::$(cat tmp/rspec.txt)"
     - name: Report YML checking failures via PR comment
       if: ${{ failure() }}
       uses: thollander/actions-comment-pull-request@v1
