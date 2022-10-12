@@ -32,7 +32,7 @@ jobs:
       uses: thollander/actions-comment-pull-request@v1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        comment_includes:
+        comment_includes: Beep boop I'm a bot.
         message: |
           Beep boop I'm a bot. Looks like your VHP curation had some problems. Maybe your YML syntax is wrong, maybe you haven't finished the curation.
 
@@ -40,9 +40,9 @@ jobs:
 
           ${{ steps.rspec_failures.outputs.rspec_txt }}
 
-    #############
-    # IF suc #
-    #############
+    ##############
+    # IF success #
+    ##############
     - name: Report YML checking success via PR comment
       if: ${{ success() }}
       uses: thollander/actions-comment-pull-request@v1
