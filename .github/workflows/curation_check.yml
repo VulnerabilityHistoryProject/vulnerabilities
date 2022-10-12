@@ -22,11 +22,10 @@ jobs:
     #############
     - name: Rerun but only failures, save to file
       if: ${{ failure() }}
-      run: |
-        rspec --only-failures --format documentation --out tmp/rspec.txt
+      run: rspec --only-failures --format documentation --out tmp/rspec.txt
     - name: Save rspec failure output to GH Actions outputs
       if: ${{ failure() }}
-      id: rpsec_failures
+      id: rspec_failures
       run: echo "::set-output name=rspec_txt::$(cat tmp/rspec.txt)"
     - name: Report YML checking failures via PR comment
       if: ${{ failure() }}
@@ -39,7 +38,7 @@ jobs:
 
           Please click on the "Details" link below and check the output from our YML editorial checkers.
 
-          ${{ steps.rpsec_failures.outputs.rspec_txt }}
+          ${{ steps.rspec_failures.outputs.rspec_txt }}
 
     #############
     # IF suc #
