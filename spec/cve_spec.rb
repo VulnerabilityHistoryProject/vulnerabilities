@@ -6,7 +6,7 @@ describe 'CVE yml file' do
   cve_ymls.each do |file|
 
     context "#{File.basename(file)}" do
-      it 'is legal YAML' do
+      it 'should be legal YAML' do
         expect(YAML.load(File.open(file))).to be
       end
 
@@ -26,13 +26,13 @@ describe 'CVE yml file' do
 
       context 'when curated at level 1, it' do
 
-        it 'has the CWE filled out' do
+        it 'should have the CWE filled out' do
           if at_curation_level?(vuln, 1)
             expect(vuln['CWE'].to_s).not_to be_empty
           end
         end
 
-        it 'has a description and mistakes made written' do
+        it 'should have a description and mistakes made written' do
           if at_curation_level?(vuln, 1)
             expect(vuln['description'].to_s).not_to be_empty
             expect(vuln['mistakes']['answer'].to_s).not_to be_empty
@@ -41,37 +41,37 @@ describe 'CVE yml file' do
 
       end
 
-      context 'when curated at level 2., it' do
+      context 'when curated at level 2, it' do
 
-        it 'has answers for unit_tested questions' do
+        it 'should have answers for unit_tested questions' do
           if at_curation_level?(vuln, 2)
             expect(vuln['unit_tested']['code']).to be(true).or(be(false))
             expect(vuln['unit_tested']['fix']).to be(true).or(be(false))
           end
         end
 
-        it 'has answers for sandbox' do
+        it 'should have answers for sandbox' do
           if at_curation_level?(vuln, 2)
             expect(vuln['sandbox']['note'].to_s).not_to be_empty
             expect(vuln['sandbox']['answer']).to be(true).or(be(false))
           end
         end
 
-        it 'has answers for i18n' do
+        it 'should have answers for i18n' do
           if at_curation_level?(vuln, 2)
             expect(vuln['i18n']['note'].to_s).not_to be_empty
             expect(vuln['i18n']['answer']).to be(true).or(be(false))
           end
         end
 
-        it 'has answers for ipc' do
+        it 'should have answers for ipc' do
           if at_curation_level?(vuln, 2)
             expect(vuln['ipc']['note'].to_s).not_to be_empty
             expect(vuln['ipc']['answer']).to be(true).or(be(false))
           end
         end
 
-        it 'has answers for disagreement' do
+        it 'should have answers for disagreement' do
           if at_curation_level?(vuln, 2)
             expect(vuln['discussion']['discussed_as_security']).to be(true).or(be(false))
             expect(vuln['discussion']['any_discussion']).to be(true).or(be(false))
@@ -79,14 +79,14 @@ describe 'CVE yml file' do
           end
         end
 
-        it 'has answers for vouch' do
+        it 'should have answers for vouch' do
           if at_curation_level?(vuln, 2)
             expect(vuln['vouch']['note'].to_s).not_to be_empty
             expect(vuln['vouch']['answer']).to be(true).or(be(false))
           end
         end
 
-        it 'has answers for stacktrace' do
+        it 'should have answers for stacktrace' do
           if at_curation_level?(vuln, 2)
             expect(vuln['stacktrace']['any_stacktraces']).to be(true).or(be(false))
             expect(vuln['stacktrace']['stacktrace_with_fix']).to be(true).or(be(false))
@@ -94,14 +94,14 @@ describe 'CVE yml file' do
           end
         end
 
-        it 'has answers for forgotten_check' do
+        it 'should have answers for forgotten_check' do
           if at_curation_level?(vuln, 2)
             expect(vuln['forgotten_check']['note'].to_s).not_to be_empty
             expect(vuln['forgotten_check']['answer']).to be(true).or(be(false))
           end
         end
 
-        it 'has answers discovered and autodiscoverable' do
+        it 'should have answers discovered and autodiscoverable' do
           if at_curation_level?(vuln, 2)
             expect(vuln['discovered']['answer'].to_s).not_to be_empty
             expect(vuln['discovered']['automated']).to be(true).or(be(false))
@@ -112,7 +112,7 @@ describe 'CVE yml file' do
           end
         end
 
-        it 'has answers for specification' do
+        it 'should have answers for specification' do
           if at_curation_level?(vuln, 2)
             expect(vuln['specification']['note'].to_s).not_to be_empty
             expect(vuln['specification']['answer']).to be(true).or(be(false))
