@@ -17,3 +17,25 @@ jobs:
     - run: gem install rspec
     - name: Run YML and editorial checkers
       run: rspec
+    #############
+    # IF FAILED #
+    #############
+    - name: Rerun but only failures, save to file
+        if: ${{ failure() }}
+        run: rspec --only-failures --out tmp/rspec.txt
+    - name: Read tmp/rspec.txt file into output
+        if: ${{ failure() }}
+        id: rpsec_failures
+        run: echo "::set-output name=rspec_txt::$(cat tmp/rspec.txt)"
+    - name: Report YML checking failures via PR comment
+      if: ${{ failure() }}
+      uses: thollander/actions-comment-pull-request@v1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        message: |
+          Beep boop I'm a bot. Looks like your VHP curation had the following problems...
+
+          ${{ steps.rpsec_failures.rspec_txt }}
+
+
+
