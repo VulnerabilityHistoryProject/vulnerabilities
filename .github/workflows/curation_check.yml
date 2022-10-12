@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: vulnerabilityhistory/curations:latest
-      volumes:
-        - /:/
+      # volumes:
+      #   - /:/
     steps:
     - run: pwd
     - uses: actions/checkout@v3
