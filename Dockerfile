@@ -1,4 +1,5 @@
 FROM ruby:3.1-alpine
 
-RUN bundle install
+COPY Gemfile .
 
+RUN bundle install

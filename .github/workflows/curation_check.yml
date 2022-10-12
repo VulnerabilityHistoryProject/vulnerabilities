@@ -1,0 +1,14 @@
+name: YML & Editorial Checkers
+on:
+  push:
+    branches: [master, dev]
+  pull_request:
+    branches: [master, dev]
+
+jobs:
+  yml_editorial_checkers:
+    runs-on: vulnerabilityhistory/curations:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run YML and editorial checkers
+      run: rspec
