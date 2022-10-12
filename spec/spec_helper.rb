@@ -2,6 +2,7 @@ require 'rspec'
 RSpec.configure do |config|
   config.tty = true
   config.color = true
+  config.example_status_persistence_file_path = "tmp/rspec_status.txt"
 end
 
 def cve_dir
