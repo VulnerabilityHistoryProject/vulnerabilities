@@ -9,9 +9,6 @@ jobs:
   yml_editorial_checkers:
     runs-on: ubuntu-latest
     container: ruby:3.0-slim
-      # image: vulnerabilityhistory/curations:latest
-      # volumes:
-      #   - /:/
     steps:
     - run: pwd
     - uses: actions/checkout@v3
