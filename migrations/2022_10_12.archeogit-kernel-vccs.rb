@@ -5,7 +5,7 @@ require 'set'
 # MIGRATION STATUS: Done! For now at least. This could be rerun.
 raise 'Migration already performed.' # Don't run this migration. Kept for posterity
 
-Dir['cves/kernel/*.yml'].each do |yml_file|
+Dir['cves/kernel/CVE\-2020*.yml'].each do |yml_file|
   yml = YAML.load(File.open(yml_file, 'r').read)
 
   vcc_set = Set.new
