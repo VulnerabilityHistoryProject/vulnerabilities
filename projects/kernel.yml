@@ -450,8 +450,6 @@ source_code_extensions:
  - .zuc
  - .zzz
 
-
-
 # A "mega commit" is a commit that touched thousands of files
 # We ignore getting file information for these commits as they
 # bog down VHP unnnecessarily. Instead, we add a note here
@@ -461,6 +459,75 @@ mega_commits:
     **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
 
     Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: 5a0e3ad6af8660be21ca98a971cd00f331318c05
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    The commit was part of an "include cleanup" that impacted over 4,000 files
+    after a significant dependency change happened.
+- commit: b24413180f5600bcb3bb70fbed5cf186b60864bd
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    The commit was part of a correction of license files, and impacted over
+    11,000 files in a single commit.
+- commit: 7c0f6ba682b9c7632072ffbedf8d328c8f3c42ba
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This commit involved renaming some header files. It involved a fairly
+    simple regular expression and was automated. It impacted over 1,000 files.
+- commit: 607ca46e97a1b6594b29647d98a32d545c24bdff
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This commit was rearranging header files to "disintegrate include/linux". The change impacted 578 files, and it was a scripted change.
+- commit: a7f7f6248d9740d710fd6bd190293fe5e16410ac
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This commit was replacing some strings in the code en masse. It touched 427 files.
+- commit: 6da2ec56059c3c7a7e5f729e6349e74ace1e5c57
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This was a "treewide" change that was changing the call to `kmalloc`. It touched 377 files.
+- commit: b17b01533b719e9949e437abf66436a875739b40
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This was reorganizing dependencies based on schedulers, touching 166 files.
+- commit: 6bb27d7349db51b50c40534710fe164ca0d58902
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This commit involved changing the `sys_timer` struct. This touched 495 files
+- commit: 3f649ab728cda8038259d8f14492fe400fbab911
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This commit was removing `uninitialized_var()` from throughout the codebase. It was an automated change of API. This change impacted 179 files.
+- commit: c4028958b6ecad064b1a6303a6a5906d4fe48d73
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This commit was converting a general-purpose "data" to a struct in many places. This change impacted 282 files.
+- commit: 2e4e6a17af35be359cc8f1c924f8f198fbd478cc
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This was a change to unify data structures for three separate firewall-like features. This immpacted 154 files.
+- commit: 6aa7de059173a986114ac43b8f50b297a86f09a8
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This was a change to the API for locking that impacted 101 files.
+
+- commit: d5341942d784134f2997b3ff82cd63cf71d1f932
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This change was converting the usage of a `struct` to a `const struct` so that people would follow the author's design intent. This impacted 101 files.
 
 # An "origin commit" is a commit that is the beginning of the project
 origin_commits:
