@@ -6,10 +6,6 @@ describe 'CVE yml file' do
   cve_ymls.each do |file|
 
     context "#{File.basename(file)}" do
-      it 'should be legal YAML' do
-        expect(YAML.load(File.open(file))).to be
-      end
-
       let(:vuln) { YAML.load(File.open(file)) }
 
       it 'has valid git hashes and commit/note structure in fixes, vccs, and interesting_commits' do

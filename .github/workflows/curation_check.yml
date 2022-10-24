@@ -6,7 +6,8 @@ on:
     branches: [master, dev]
 
 jobs:
-  yml_editorial_checkers:
+  yml_parses:
+    name: Is the CVE YAML syntax valid?
     runs-on: ubuntu-latest
     container: ruby:3.0-slim
     steps:
@@ -16,5 +17,38 @@ jobs:
        fetch-depth: 1
     - run: gem install rspec
     - name: Run YML and editorial checkers
-      run: rspec
+      run: rspec spec/yaml_parses_spec.rb
+    #############
+    # IF FAILED #
+    #############
+    - name:  CURATORS README (Only failures, in a pretty format)
+      if: ${{ failure() }}
+      run: rspec --only-failures --format documentation
+
+  cve_curation_finished:
+    name: Are all the questions answered?
+    needs: yml_parses
+    runs-on: ubuntu-latest
+    container: ruby:3.0-slim
+    steps:
+    - run: pwd
+    - uses: actions/checkout@v3
+      with:
+       fetch-depth: 1
+    - run: gem install rspec
+    - name: Run YML and editorial checkers
+      run: rspec spec/cve_spec.rb
+    #############
+    # IF FAILED #
+    #############
+    - name:  CURATORS README (Only failures, in a pretty format)
+      if: ${{ failure() }}
+      run: rspec --only-failures --format documentation
+
+
+
+
+
+
+
 
