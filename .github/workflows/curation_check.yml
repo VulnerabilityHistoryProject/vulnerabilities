@@ -23,7 +23,7 @@ jobs:
     #############
     - name:  CURATORS README (Only failures, in a pretty format)
       if: ${{ failure() }}
-      run: rspec --only-failures --format documentation
+      run: rspec spec/yaml_parses_spec.rb --only-failures --format documentation
 
   cve_curation_finished:
     name: Are all the questions answered?
