@@ -14,13 +14,13 @@ describe 'CVE yml file' do
 
       it 'has valid git hashes and commit/note structure in fixes, vccs, and interesting_commits' do
         vuln['fixes'].each do |fix|
-          expect(fix['commit']).to(match(/[0-9a-f]{40,}/).or(be_nil))
+          expect(fix['commit']).to(match(/[0-9a-f]{40,}/).or(be_nil).or(be_empty))
         end
         vuln['vccs'].each do |fix|
-          expect(fix['commit']).to(match(/[0-9a-f]{40,}/).or(be_nil))
+          expect(fix['commit']).to(match(/[0-9a-f]{40,}/).or(be_nil).or(be_empty))
         end
         vuln['interesting_commits']['commits'].each do |fix|
-          expect(fix['commit']).to(match(/[0-9a-f]{40,}/).or(be_nil))
+          expect(fix['commit']).to(match(/[0-9a-f]{40,}/).or(be_nil).or(be_empty))
         end
       end
 
