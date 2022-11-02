@@ -55,7 +55,7 @@ ymls.each do |yml_file|
   h = YAML.load(File.open(yml_file, 'r').read)
 
   # Do stuff to your hash here.
-  if(h['curated'])
+  if h['curated']
     h['curated_instructions'] = <<~EOS
     If you are manually editing this file, then you are "curating" it.
 
@@ -66,6 +66,10 @@ ymls.each do |yml_file|
     as finished unless curated is properly updated.
     EOS
     h['curation_level'] = 1
+  end
+
+  if h["curation_level"].nil?
+    h["curation_level"] = 0
   end
 
   # Reconstruct the hash in the order we specify
