@@ -1,0 +1,121 @@
+name: Django
+fullname: Django
+subdomain: django
+bg_color: '#20AA76'
+fg_color: '#20AA76'
+project_url: https://www.djangoproject.com/
+description: |
+  "Django makes it easier to build better Web apps more quickly and with less code." -https://www.djangoproject.com/
+git_commit_url_prefix: https://github.com/django/django/commit/
+github_search_url_prefix: https://github.com/django/django/search?utf8=✓&q=
+github_edit_cve_url_prefix: https://github.com/VulnerabilityHistoryProject/django-vulnerabilities/edit/dev/cves/
+vulnerabilities_description: |
+  These vulnerabilities are reported by the Django development team [on their news feed](https://www.djangoproject.com/weblog/)
+developers_description: |
+  The following is a list of developers who are involved in code that was found to be vulnerable. Specifically, developers end up here if they were the author of a commit to code that was, at some point in time, fixed for a vulnerability. Note that this is NOT a comprehensive list.
+
+# If a filepath matches this expression it will be flagged in the database as a test file
+test_regex:
+  - tests
+
+# A file name that ends with this string is considered to be source code
+# The way I found these was to do this at the root of the git repo
+#
+# find -type f | cut -c 3- | sed 's/.*\.//' | sort | uniq > ~/django_exts.txt
+#
+# Then filtered by hand. Remove anything compressed, binary, dev-tools, etc.
+source_code_extensions:
+  - bat
+  - cfg
+  - conf
+  - css
+  - dbf
+  - djtpl
+  - dot-file
+  - egg
+  - eml
+  - eot
+  - geojson
+  - gitattributes
+  - gitignore
+  - gitkeep
+  - graffle
+  - hidden
+  - html
+  - ico
+  - idx
+  - in
+  - ini
+  - js
+  - json
+  - kml
+  - Makefile
+  - md
+  - mo
+  - po
+  - pristine
+  - prj
+  - py
+  - py-tpl
+  - python
+  - rst
+  - sample
+  - sh
+  - shp
+  - shx
+  - svg
+  - thtml
+  - tpl
+  - ttf
+  - txt
+  - TXT
+  - unkn
+  - unknown
+  - vrt
+  - woff
+  - woff2
+  - x
+  - xml
+  - yml
+
+# A "mega commit" is a commit that touched thousands of files
+# We ignore getting file information for these commits as they
+# bog down VHP unnnecessarily. Instead, we add a note here
+mega_commits: []
+
+# An "origin commit" is a commit that is the beginning of the project
+origin_commits:
+- commit: ce079538c66d826be5f0c4260ab4405b7abcbed7
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    It is the original import of the Django source tree in, and involves
+    copying over thousands of files. To see more about it, head over to:
+    https://github.com/systemd/systemd/commit/ce079538c66d826be5f0c4260ab4405b7abcbed7
+- commit: 1cb1d9cd078adea3060742a768ef71f5bafb7f07
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    It is the original import of the Django source tree in, and involves
+    copying over thousands of files. To see more about it, head over to:
+    https://github.com/systemd/systemd/commit/1cb1d9cd078adea3060742a768ef71f5bafb7f07
+- commit:
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    It is the original import of the Django source tree in, and involves
+    copying over thousands of files. To see more about it, head over to:
+    https://github.com/systemd/systemd/commit/ed114e15106192b22ebb78ef5bf5bce72b419d13
+- commit:
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    It is the original import of the Django source tree in, and involves
+    copying over thousands of files. To see more about it, head over to:
+    https://github.com/systemd/systemd/commit/07ffc7d605cc96557db28a9e35da69bc0719611b
+- commit:
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    It is the original import of the Django source tree in, and involves
+    copying over thousands of files. To see more about it, head over to:
+    https://github.com/systemd/systemd/commit/d6ded0e91bcdd2a8f7a221f6a5552a33fe545359
+
+
+
+
