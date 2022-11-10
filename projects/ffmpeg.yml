@@ -1,0 +1,107 @@
+name: FFmpeg
+fullname: FFmpeg
+subdomain: ffmpeg
+bg_color: '#449D44'
+fg_color: '#449D44'
+project_url: https://ffmpeg.org/
+description: |
+  "FFmpeg is the leading multimedia framework, able to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created. It supports the most obscure ancient formats up to the cutting edge. No matter if they were designed by some standards committee, the community or a corporation. It is also highly portable: FFmpeg compiles, runs, and passes our testing infrastructure FATE across Linux, Mac OS X, Microsoft Windows, the BSDs, Solaris, etc. under a wide variety of build environments, machine architectures, and configurations." -https://ffmpeg.org/
+git_commit_url_prefix: https://github.com/FFmpeg/FFmpeg/commit/
+github_search_url_prefix: https://github.com/FFmpeg/FFmpeg/search?utf8=✓&q=
+github_edit_cve_url_prefix: https://github.com/VulnerabilityHistoryProject/ffmpeg-vulnerabilities/edit/dev/cves/
+vulnerabilities_description: |
+  These vulnerabilities are reported by the FFmpeg development team [on their site](https://ffmpeg.org/security.html)
+developers_description: |
+  The following is a list of developers who are involved in code that was found to be vulnerable. Specifically, developers end up here if they were the author of a commit to code that was, at some point in time, fixed for a vulnerability. Note that this is NOT a comprehensive list.
+
+# If a filepath matches this expression it will be flagged in the database as a test file
+test_regex:
+  - tests
+
+# A file name that ends with this string is considered to be source code
+# The way I found these was to do this at the root of the git repo
+#
+# find -type f | cut -c 3- | sed 's/.*\.//' | sort | uniq > ~/ffmpeg_exts.txt
+#
+# Then filtered by hand. Remove anything compressed, binary, dev-tools, etc.
+source_code_extensions:
+  - Makefile
+  - S
+  - asm
+  - awk
+  - bisect-create
+  - c
+  - cl
+  - cl2c
+  - clean-diff
+  - makedef
+  - mslink
+  - configure
+  - cpp
+  - css
+  - cu
+  - cuh
+  - dpx
+  - dvd2concat
+  - example
+  - ffconcat
+  - ffmeta
+  - ffpreset
+  - Makefile
+  - fits
+  - gen-rc
+  - h
+  - html
+  - idx
+  - init
+  - libav-merge-next-commit
+  - list
+  - m
+  - mailmap
+  - mak
+  - make_chlayout_test
+  - md
+  - missing_codec_desc
+  - murge
+  - pam
+  - patcheck
+  - pl
+  - plotframes
+  - pm
+  - png
+  - pnm
+  - py
+  - rb
+  - rc
+  - sample
+  - sh
+  - supp
+  - template
+  - texi
+  - txt
+  - unwrap-diff
+  - v
+  - voc
+  - xsd
+  - xwd
+  - yml
+
+# A "mega commit" is a commit that touched thousands of files
+# We ignore getting file information for these commits as they
+# bog down VHP unnnecessarily. Instead, we add a note here
+mega_commits: []
+
+# An "origin commit" is a commit that is the beginning of the project
+origin_commits:
+- commit: 77bb6835ba752bb9335d208963a53227bbb1bc63
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    It is the original import of the FFmpeg source tree in, and involves
+    copying over thousands of files. To see more about it, head over to:
+    https://github.com/ffmpeg/ffmpeg/commit/77bb6835ba752bb9335d208963a53227bbb1bc63
+- commit: 9aeeeb63f7e1ab7b0b7bb839a5f258667a2d2d78
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    It is the original import of the FFmpeg source tree in, and involves
+    copying over thousands of files. To see more about it, head over to:
+    https://github.com/ffmpeg/ffmpeg/commit/9aeeeb63f7e1ab7b0b7bb839a5f258667a2d2d78

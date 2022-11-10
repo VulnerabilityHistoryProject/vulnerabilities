@@ -87,9 +87,6 @@ mega_commits:
     note:  |
       Update license header in TC6 trunk to comply with the rules given on
       http://www.apache.org/legal/src-headers.html#headers
-  - commit: 0e360f39c2ab4e39d427f67b3fb024c9e08b633a
-    note:  |
-      Changing props like the version tag and ID tags in many files.
   - commit: db5024a4f04a30a22f7ef50d3a5ed643d25117e8
     note:  |
       They attempted to create a new repository according to the earlier thread.
@@ -102,3 +99,7 @@ origin_commits:
       **Note from VHP curators**: this commit is not fully imported into VHP.
       It is the original import of the Tomcat repository when they moved to this release branch. To see more about it, head over to:
       https://github.com/apache/tomcat/commit/a84fabcbc6fee8a69253ad92a304b4718e96a7c9.
+
+# These filepaths should not be included in mining analysis
+exclude_filepaths:
+  - CHANGELOG.xml
