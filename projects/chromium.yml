@@ -541,3 +541,7 @@ origin_commits:
   note: |
     **Note from VHP curators**: this commit is not fully imported into VHP.
     This was the original import of the chrome/ folder in the repo
+
+# These filepaths should not be included in mining analysis
+exclude_filepaths:
+  - DEPS
