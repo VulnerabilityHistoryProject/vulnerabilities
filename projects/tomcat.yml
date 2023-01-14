@@ -99,3 +99,7 @@ origin_commits:
       **Note from VHP curators**: this commit is not fully imported into VHP.
       It is the original import of the Tomcat repository when they moved to this release branch. To see more about it, head over to:
       https://github.com/apache/tomcat/commit/a84fabcbc6fee8a69253ad92a304b4718e96a7c9.
+
+# These filepaths should not be included in mining analysis
+exclude_filepaths:
+  - CHANGELOG.xml
