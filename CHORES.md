@@ -27,12 +27,12 @@ These are regular tasks that the data shepherd will need to complete on a weekly
 
 Copy this template into the issue tracker for each project. Replace "fooproj" with the project you're updating.
 
-- [ ] fooproj: New vulnerabilities
-    - [ ] fooproj: `git pull` on the main source repo (or clone fresh)
-    - [ ] fooproj: `vhp update fooproj`
-    - [ ] fooproj: `vhp loadcommits`
-    - [ ] fooproj: `vhp weeklies`
-    - [ ] fooproj: update releases and any other major project news in `projects/fooproj.yml`
+- [ ] New vulnerabilities
+    - [ ] `git pull` on the main source repo (or clone fresh)
+    - [ ] `vhp update`
+    - [ ] `vhp loadcommits`
+    - [ ] `vhp weeklies`
+    - [ ] update releases and any other major project news in `projects/fooproj.yml`
 - [ ] vhp: if any of the above operations fails, create a bug for it on the `vulnerabiltiies` repository.
 - [ ] vhp: `rails data:clear data:all` warnings documented in issues
 - [ ] vhp: `rails data:clear data:all` does not break
@@ -64,7 +64,7 @@ Alternatively, you can use our `artifacts` server or RIT's Research Computing Cl
 * `cd` to the root of the `vulnerabilities` repo
 * Make sure you have the latest source repo. A clean `git clone` can sometimes be easier than `git pull` if the repo is huge
 * Run `vhp loadcommits` to update gitlog.json
-    * Example run for Struts: `vhp loadcommits --repo ../struts-src --mining ../vhp-mining --project struts`
+    * Example run for Struts: `vhp loadcommits --repo ../struts --mining ../vhp-mining --project struts`
 * Inspect the output that everything is as you think it is
 * Check the size of gitlog.json before and after - did it jump way up in size? There might be a mega-commit in there - file a bug and we'll fix that.
 * Commit to the `dev` branch of the vulnerabilties repo
@@ -104,6 +104,36 @@ If we want to create a new vulnerability and look up basic information as in `vh
 
 ## VCC identifying
 
+TBD
+
+# Subsystem normalization
+
+**What is this?** We have hundreds of tags called "subsystem", coming from the `subsystems` entry in the curation YML. Curators are asked to name what subsystems are impacted by the vulnerability, and this is a subjective question. So the answers can be all over the place. The goal of this feature is to provide logical groupings of similar vulnerabilities.
+
+**What do I do?** First, you'll need a list of all the subsystem tags currently in use. You can get this from:
+
+* If you have the webapp set up, open up `rails console` and run `Tag.where("shortname LIKE 'subsystem%'").pluck(:name)`
+* If you only have access to the website, you can go to the `Tags` page and search for `subsystem`.
+* Or, you can go to the "Cloud" tab from the Tags page and copy them from there.
+
+Next, go through the list of subsystems project-by-project and review the list of subsystems that are there.
+
+Apply the following rules:
+
+* All lowercase letters, or any of `@_-`
+    * No slashes in the name (e.g. `src/foo` should just be `foo`)
+    * A space or two is okay, within reason
+    * No commas - multiple subsystems need to be in a YML list (see below)
+* 30 characters or less
+* Does not have the project name in it (e.g. `struts-foo` should just be `struts`. )
+* If multiple subsystems are involved, they need to be specified as separate entries in the YML, using a [YML list](https://en.wikipedia.org/wiki/YAML#Basic_components)
+* Nothing way too broad where 80% of vulnerabilities would be in it (e.g. `src`)
+* No source code files. A subsystem is larger than a single file.
+* This doesn't have to be a directory, but people often infer them from directories
+
+When you find a correction, find the original YML file(s) that reference the subsystem and correct them. An easy way to do this is to open up your local `vulnerabilities` repo in VS Code and use `Find in Files` under `Edit` to search for the string you want.
+
+Push your corrections to a new branch and make a pull request.
 
 # Useful Tips and Tools
 
