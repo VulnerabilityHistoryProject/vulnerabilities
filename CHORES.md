@@ -120,7 +120,7 @@ Next, go through the list of subsystems project-by-project and review the list o
 
 Apply the following rules:
 
-* All lowercase letters, or any of `@_-`
+* All lowercase letters, or any of `@_-` or `0-9`
     * No slashes in the name (e.g. `src/foo` should just be `foo`)
     * A space or two is okay, within reason
     * No commas - multiple subsystems need to be in a YML list (see below)
@@ -130,6 +130,7 @@ Apply the following rules:
 * Nothing way too broad where 80% of vulnerabilities would be in it (e.g. `src`)
 * No source code files. A subsystem is larger than a single file.
 * This doesn't have to be a directory, but people often infer them from directories
+* Not _too similar_ to another subsystem. Use your best judgment here.
 
 When you find a correction, find the original YML file(s) that reference the subsystem and correct them. An easy way to do this is to open up your local `vulnerabilities` repo in VS Code and use `Find in Files` under `Edit` to search for the string you want.
 
