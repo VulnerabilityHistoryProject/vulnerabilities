@@ -1,0 +1,94 @@
+name: Struts
+fullname: Apache Struts
+subdomain: struts
+bg_color: '#3186c3'
+fg_color: '#3f70b6'
+project_url: https://struts.apache.org
+description: |
+  Apache Struts is an MVC web application framework in Java
+git_commit_url_prefix: https://github.com/apache/struts/commit/
+github_search_url_prefix: https://github.com/apache/struts/search?utf8=✓&q=
+github_edit_cve_url_prefix: https://github.com/VulnerabilityHistoryProject/struts-vulnerabilities/edit/dev/cves/
+vulnerabilities_description: |
+  These vulnerabilities are reported by the development team [on their website](https://cwiki.apache.org/confluence/display/WW/Security+Bulletins)
+developers_description: |
+  The following is a list of developers who are involved in code that was found to be vulnerable. Specifically, developers end up here if they were the author of a commit to code that was, at some point in time, fixed for a vulnerability. Note that this is NOT a comprehensive list.
+
+# If a filepath matches this expression it will be flagged in the database as a test file
+test_regex:
+  - test
+
+# A file name that ends with this string is considered to be source code
+# The way I found these was to do this at the root of the git repo
+#
+# find -type f | cut -c 3- | sed 's/.*\.//' | sort | uniq > ~/struts_exts.txt
+#
+# Then filtered by hand. Remove anything compressed, binary, dev-tools, etc.
+source_code_extensions:
+  - .cfg
+  - .cmd
+  - .css
+  - .dtd
+  - .eot
+  - .ftl
+  - .gdsl
+  - .html
+  - .idx
+  - .java
+  - Jenkinsfile
+  - .jjt
+  - .jrxml
+  - .js
+  - .jsp
+  - .map
+  - .md
+  - .mvnw
+  - .pack
+  - .properties
+  - .sample
+  - .svg
+  - .tld
+  - .ttf
+  - .txt
+  - .vm
+  - .woff
+  - .woff2
+  - .xml
+  - .xsl
+  - .yaml
+  - .yml
+
+# A "mega commit" is a commit that touched thousands of files
+# We ignore getting file information for these commits as they
+# bog down VHP unnnecessarily. Instead, we add a note here
+mega_commits:
+- commit: c01d3a92db7f71f751a0522912d24bcf4a94a1b0
+  note:  |
+    This commit is the initial import of Apache WebWork 2, which a web
+    application framework developed by OpenSymphony. WebWork was build on
+    XWork.
+- commit: 6229ad7a4726717bf594e9b4e4afa90e1e028829
+  note:  |
+    This commit merged the rest plugin into the trunk of Apache Struts. The
+    REST Plugin allows support for RESTful web applications.
+- commit: 2b8e02d97d05a328c65dff025dfd2e02ef86c135
+  note:  |
+    They renamed the org.apache.struts.action2 to org.apache.struts2.
+- commit: f0e3ff3628cdda1c55dcca06bba6ab4aed960ec8
+  note:  |
+    Create space in the incubator for the new Webwork podling.
+- commit: e82758a9616fbd29e5fae9c4f1095f5c9a1ca509
+  note:  |
+    They completed the maven build in this commit.
+- commit: 0c543aef318341ca9bd482e15f1637497b8a4dfd
+  note:  |
+     They moved XWork core under Struts 2 in order to simplify their release process.
+
+# An "origin commit" is a commit that is the beginning of the project
+origin_commits:
+- commit: c01d3a92db7f71f751a0522912d24bcf4a94a1b0
+  note: This was an initial import back in 2006.
+- commit: f0e3ff3628cdda1c55dcca06bba6ab4aed960ec8
+  note: Initial commit for new Webwork poddling.
+- commit: 0c543aef318341ca9bd482e15f1637497b8a4dfd
+  note: Initial commit for maven build.

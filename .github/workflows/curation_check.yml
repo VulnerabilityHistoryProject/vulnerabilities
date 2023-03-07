@@ -8,13 +8,13 @@ on:
 jobs:
   yml_editorial_checkers:
     runs-on: ubuntu-latest
-    container: ruby:3.0-slim
+    container: ruby:3.2.1
     steps:
-    - run: pwd
     - uses: actions/checkout@v3
       with:
        fetch-depth: 1
     - run: gem install rspec
     - name: Run YML and editorial checkers
-      run: rspec
-
+      run: |
+        rspec --no-color -f failures spec/yaml_parses_spec.rb && \
+        rspec --no-color -f failures spec/cve_spec.rb

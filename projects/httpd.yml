@@ -65,17 +65,7 @@ source_code_extensions:
 # A "mega commit" is a commit that touched thousands of files
 # We ignore getting file information for these commits as they
 # bog down VHP unnnecessarily. Instead, we add a note here
-mega_commits:
-- commit: 0e360f39c2ab4e39d427f67b3fb024c9e08b633a
-  note:  |
-     Update license header in TC6 trunk to comply with the rules given on
-     http://www.apache.org/legal/src-headers.html#headers
-- commit: 0e360f39c2ab4e39d427f67b3fb024c9e08b633a
-  note:  |
-     Changing props like the version tag and ID tags in many files.
-- commit: db5024a4f04a30a22f7ef50d3a5ed643d25117e8
-  note:  |
-     They attempted to create a new repository according to the earlier thread.
+mega_commits: []
 
 # An "origin commit" is a commit that is the beginning of the project
 origin_commits:
