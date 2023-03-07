@@ -1,2 +1,6 @@
 tmp/*
 !tmp/gitkeep.txt
+.idea
+.DS_Store
+.byebug_history
+

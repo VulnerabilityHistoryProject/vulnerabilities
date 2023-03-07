@@ -1,0 +1,538 @@
+name: Linux Kernel
+fullname: Linux Kernel
+subdomain: kernel
+bg_color: '#33290a'
+fg_color: '#f0ede3'
+project_url: https://kernel.org/
+description: |
+  The Linux kernel is the basis for all Linux operating system distributions. From their website: "Linux is a clone of the operating system Unix, written from scratch by Linus Torvalds with assistance from a loosely-knit team of hackers across the Net."
+git_commit_url_prefix: https://github.com/torvalds/linux/commit/
+github_search_url_prefix: https://github.com/torvalds/linux/search?utf8=✓&q=
+github_edit_cve_url_prefix: https://github.com/VulnerabilityHistoryProject/vulnerabilities/edit/dev/cves/
+vulnerabilities_description: |
+  These vulnerabilities have been reported and confirmed by the Linux development team. Special thanks to the folks at the [Linux Kernel CVE](https://www.linuxkernelcves.com/) for tracking this data.
+developers_description: |
+  The following is a list of developers who are involved in code that was found to be vulnerable. Specifically, developers end up here if they were the author of a commit to code that was, at some point in time, fixed for a vulnerability. Note that this is NOT a comprehensive list, as Linux has thousands of contributors
+
+# A file that ends with this string is considered to be source code
+# The way I found these was to do this at the root of the git repo
+#
+# find -type f | cut -c 3- | sed 's/.*\.//' | sort | uniq > ~/chromium_exts.txt
+#
+# Tons of OWNERs files and DEPS files. Remove those.
+# sed -i '/OWNERS/d' ~/chromium_exts.txt
+# sed -i '/DEPS/d' ~/chromium_exts.txt
+# sed -i '/README/d' ~/chromium_exts.txt
+#
+# It's also pretty unlikely that a file extension has more than 10 characters.
+# sed -i '/^.\{10\}./d' ~/chromium_exts.txt
+#
+# That brings the list down to ~500, so manually edit from there.
+#
+# Then filtered by hand. Remove anything compressed, binary, dev-tools, etc.
+source_code_extensions:
+ - Rakefile
+ - .a
+ - .aac
+ - .abc
+ - .ac
+ - .ac3
+ - .adm
+ - .adts
+ - .aff
+ - .ai
+ - .aidl
+ - .aif
+ - .aiff
+ - .am
+ - .amd64
+ - .amr
+ - .ani
+ - .antlr
+ - .apk
+ - .app
+ - .args
+ - .arj
+ - .arm
+ - .arm64
+ - .asciipb
+ - .asf
+ - .asis
+ - .asm
+ - .attr
+ - .avi
+ - .awk
+ - .babelrc
+ - .bat
+ - .bazel
+ - .bc
+ - .bcb
+ - .bdic
+ - .beg
+ - .begin
+ - .bgra
+ - .bin
+ - .BIN
+ - .bmp
+ - .bowerrc
+ - .br
+ - .bsdiff
+ - BUILD
+ - .bz2
+ - .bzl
+ - .c
+ - .cab
+ - .cbor
+ - .cc
+ - .cer
+ - .cfg
+ - .cgi
+ - .clang-tidy
+ - .class
+ - .classes
+ - .classpath
+ - .cmake
+ - .cmd
+ - .cmx
+ - .cnf
+ - .code2flow
+ - .coffee
+ - .conf
+ - .config
+ - .content
+ - .context
+ - .cp
+ - .cpio
+ - .cpp
+ - .crashpad
+ - .crl
+ - .croc
+ - .cron
+ - .crossfile
+ - .crt
+ - .crx
+ - .crx2
+ - .crx3
+ - .cs
+ - .csproj
+ - .csr
+ - .css
+ - .css_t
+ - .csv
+ - .cti
+ - .cur
+ - .cxx
+ - .dart
+ - .dat
+ - .data
+ - .db
+ - .deb
+ - .def
+ - .defs
+ - .der
+ - .dex
+ - .dic
+ - .dict
+ - .diff
+ - .dirs
+ - .disable
+ - .dislocator
+ - .dj
+ - .dll
+ - .dm
+ - .dmg
+ - .doc
+ - .dot
+ - .dox
+ - .doxy
+ - .draft
+ - .dsc
+ - .dsp
+ - .dsw
+ - .dtd
+ - .dummy
+ - .dump
+ - .eac3
+ - .ejs
+ - .el
+ - .elm
+ - .ember-cli
+ - .emf
+ - .empty
+ - .end
+ - .ent
+ - .eot
+ - .eps
+ - .es
+ - .excludes
+ - .exe
+ - .expected
+ - .explain
+ - .export
+ - .exports
+ - .ext
+ - .extjs
+ - .fake
+ - .fallback
+ - .fbs
+ - .fea
+ - .fidl
+ - .filter
+ - .filters
+ - .first
+ - .flac
+ - .flags
+ - .flv
+ - .foo
+ - .fragment
+ - .g
+ - .gdb
+ - .gemspec
+ - .glif
+ - .gn
+ - .gni
+ - .go
+ - .golden
+ - .good
+ - .gpd
+ - .gperf
+ - .gpg
+ - .gradle
+ - .grd
+ - .grdp
+ - .groovy
+ - .gtestjs
+ - .guess
+ - .gyp
+ - .gypi
+ - .gz
+ - .gzip
+ - .h
+ - .handlebars
+ - .hashes
+ - .hbs
+ - .header
+ - .headers
+ - .hevc
+ - .hidden
+ - .hlsl
+ - .hml
+ - .lnk
+ - .log
+ - .lrz
+ - .lst
+ - .lz
+ - .lzma
+ - .lzo
+ - .m
+ - .m2ts
+ - .m32
+ - .m3u8
+ - .m4
+ - .m4a
+ - .make
+ - Makefiles
+ - .mako
+ - .man
+ - .manifest
+ - .manpages
+ - .map
+ - .mc
+ - .md
+ - .menu
+ - .mht
+ - .mhtml
+ - .mingw
+ - .mips
+ - .mips64el
+ - .mipsel
+ - .mjs
+ - .mk
+ - .mkv
+ - .mm
+ - .mojom
+ - .mojomsg
+ - .mon
+ - .morph
+ - .msc
+ - .msg
+ - .msvc
+ - .myspell
+ - .myt
+ - .n
+ - .natvis
+ - .nc
+ - .nexe
+ - .nib
+ - .ninja
+ - .nmake
+ - .nmf
+ - .not-css
+ - .not-html
+ - .notpy
+ - .npmignore
+ - .nsproxy
+ - .nuspec
+ - .odt
+ - .oga
+ - .ogg
+ - .ogv
+ - .old
+ - .onc
+ - .options
+ - .opus
+ - .order
+ - .orf
+ - .otf
+ - .out
+ - .output
+ - .pam
+ - .patch
+ - .pb
+ - .pb_text
+ - .pch
+ - .pcm
+ - .pddm
+ - .pdf
+ - .pdl
+ - .pem
+ - .pfx
+ - .pgm
+ - .php
+ - .pidl
+ - .pins
+ - .pk8
+ - .pkg
+ - .pkgproj
+ - .pkpass
+ - .pl
+ - .plist
+ - .pltsuite
+ - .podspec
+ - .pol
+ - .polymer
+ - .Processor
+ - .proctype
+ - .prop
+ - .properties
+ - .props
+ - .proto
+ - .ps1
+ - .pump
+ - .pvk
+ - .pwg
+ - .py
+ - .pyd
+ - .pydeps
+ - .pyl
+ - .py-str
+ - .qemu
+ - .rar
+ - .rb
+ - .rc
+ - .rdf
+ - .release
+ - .resx
+ - .rgs
+ - .rm
+ - .rpc
+ - .rules
+ - .ruleset
+ - .rz
+ - .s
+ - .S
+ - .sample
+ - .sb
+ - .scons
+ - .scss
+ - .sct
+ - .sctlist
+ - .sdef
+ - .security
+ - .sed
+ - .see_also
+ - .settings
+ - .sh
+ - .sitx
+ - .skeletons
+ - .sln
+ - .snk
+ - .so
+ - .spc
+ - .spec
+ - .sql
+ - .sqlite
+ - .src
+ - .sst
+ - .status
+ - .storyboard
+ - .strings
+ - .sub
+ - .subtest
+ - .sug
+ - .swf
+ - .swift
+ - .sxg
+ - .sym
+ - .syms
+ - .syntax
+ - .tab
+ - .tar
+ - .tcl
+ - .templ
+ - .template
+ - .terms
+ - .test
+ - .testcases
+ - .test-mojom
+ - .tests
+ - .text
+ - .textpb
+ - .textproto
+ - .tlb
+ - .tmpl
+ - .tokencap
+ - .tokenizers
+ - .toml
+ - .ts
+ - .ttc
+ - .ttx
+ - .txt
+ - .TXT
+ - .typemap
+ - .types
+ - .unitjs
+ - .unix
+ - .usdz
+ - .vanilla
+ - .ver
+ - .version
+ - .visualizer
+ - .vpython
+ - .vsct
+ - .vsix
+ - .vtt
+ - .vue
+ - .wasm
+ - .wat
+ - .wbn
+ - .webarchive
+ - .whitelist
+ - .woff
+ - .woff2
+ - .wrong
+ - .wxs
+ - .xaml
+ - .xcf
+ - .xht
+ - .xhtml
+ - .xib
+ - .xls
+ - .xmb
+ - .xml
+ - .xpm
+ - .xsd
+ - .xsl
+ - .xslt
+ - .xtb
+ - .xul
+ - .xz
+ - .y
+ - .yaml
+ - .yapf
+ - .yml
+ - .yuv
+ - .Z
+ - .zoneinfo
+ - .zoo
+ - .zOS
+ - .ztf
+ - .zuc
+ - .zzz
+
+# A "mega commit" is a commit that touched thousands of files
+# We ignore getting file information for these commits as they
+# bog down VHP unnnecessarily. Instead, we add a note here
+mega_commits:
+- commit: 1da177e4c3f41524e886b7f1b8a0c1fc7321cac2
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: 5a0e3ad6af8660be21ca98a971cd00f331318c05
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    The commit was part of an "include cleanup" that impacted over 4,000 files
+    after a significant dependency change happened.
+- commit: b24413180f5600bcb3bb70fbed5cf186b60864bd
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    The commit was part of a correction of license files, and impacted over
+    11,000 files in a single commit.
+- commit: 7c0f6ba682b9c7632072ffbedf8d328c8f3c42ba
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This commit involved renaming some header files. It involved a fairly
+    simple regular expression and was automated. It impacted over 1,000 files.
+- commit: 607ca46e97a1b6594b29647d98a32d545c24bdff
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This commit was rearranging header files to "disintegrate include/linux". The change impacted 578 files, and it was a scripted change.
+- commit: a7f7f6248d9740d710fd6bd190293fe5e16410ac
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This commit was replacing some strings in the code en masse. It touched 427 files.
+- commit: 6da2ec56059c3c7a7e5f729e6349e74ace1e5c57
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This was a "treewide" change that was changing the call to `kmalloc`. It touched 377 files.
+- commit: b17b01533b719e9949e437abf66436a875739b40
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This was reorganizing dependencies based on schedulers, touching 166 files.
+- commit: 6bb27d7349db51b50c40534710fe164ca0d58902
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This commit involved changing the `sys_timer` struct. This touched 495 files
+- commit: 3f649ab728cda8038259d8f14492fe400fbab911
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This commit was removing `uninitialized_var()` from throughout the codebase. It was an automated change of API. This change impacted 179 files.
+- commit: c4028958b6ecad064b1a6303a6a5906d4fe48d73
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This commit was converting a general-purpose "data" to a struct in many places. This change impacted 282 files.
+- commit: 2e4e6a17af35be359cc8f1c924f8f198fbd478cc
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This was a change to unify data structures for three separate firewall-like features. This immpacted 154 files.
+- commit: 6aa7de059173a986114ac43b8f50b297a86f09a8
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This was a change to the API for locking that impacted 101 files.
+
+- commit: d5341942d784134f2997b3ff82cd63cf71d1f932
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP because it touched a lot of files.
+
+    This change was converting the usage of a `struct` to a `const struct` so that people would follow the author's design intent. This impacted 101 files.
+
+# An "origin commit" is a commit that is the beginning of the project
+origin_commits:
+- commit: 1da177e4c3f41524e886b7f1b8a0c1fc7321cac2
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.

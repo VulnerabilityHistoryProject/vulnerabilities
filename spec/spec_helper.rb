@@ -1,4 +1,6 @@
 require 'rspec'
+require 'date'
+
 RSpec.configure do |config|
   config.tty = true
   config.color = true
@@ -28,5 +30,16 @@ def valid_git_hash_or_empty(str)
 end
 
 def at_curation_level?(vuln, level)
-  vuln['curation_level'] >= level
+  vuln[:curation_level] >= level
+end
+
+
+# Load YML the way we expect: symbolized names,
+# even if they specified symbols or not
+# NOTE: for Ruby 3.1+, Psych disallows Date classes by default.
+#       We chose to allow dates.
+def load_yml_the_vhp_way(f)
+  YAML.load File.read(f),
+    symbolize_names: true,
+    permitted_classes: [Date, Symbol]
 end

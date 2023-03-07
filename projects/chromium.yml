@@ -1,0 +1,547 @@
+name: Chromium
+fullname: Chromium Browser
+subdomain: chromium
+bg_color: '#4587f4'
+fg_color: '#d9e1ed'
+project_url: https://www.chromium.org/Home
+description: |
+  The Chromium Browser project is the open source project behind Google Chrome.
+
+  Throughout the VHP, when we refer to Chromium, we are referring to the Browser. This study does not include ChromeOS.
+git_commit_url_prefix: https://github.com/chromium/chromium/commit/
+github_search_url_prefix: https://github.com/chromium/chromium/search?utf8=✓&q=
+github_edit_cve_url_prefix: https://github.com/andymeneely/chromium-vulnerabilities/edit/dev/cves/
+vulnerabilities_description: |
+  These vulnerabilities have been reported and confirmed by the Chromium team. Chromium typically releases this data on their [release blog](https://chromereleases.googleblog.com/).
+developers_description: |
+  The following is a list of developers who are involved in code that was found to be vulnerable. Specifically, developers end up here if they were the author of a commit to code that was, at some point in time, fixed for a vulnerability. Note that this is NOT a comprehensive list, as Chromium has 3,000+ contributors
+
+# A file that ends with this string is considered to be source code
+# The way I found these was to do this at the root of the git repo
+#
+# find -type f | cut -c 3- | sed 's/.*\.//' | sort | uniq > ~/chromium_exts.txt
+#
+# Tons of OWNERs files and DEPS files. Remove those.
+# sed -i '/OWNERS/d' ~/chromium_exts.txt
+# sed -i '/DEPS/d' ~/chromium_exts.txt
+# sed -i '/README/d' ~/chromium_exts.txt
+#
+# It's also pretty unlikely that a file extension has more than 10 characters.
+# sed -i '/^.\{10\}./d' ~/chromium_exts.txt
+#
+# That brings the list down to ~500, so manually edit from there.
+#
+# Then filtered by hand. Remove anything compressed, binary, dev-tools, etc.
+source_code_extensions:
+ - Rakefile
+ - .a
+ - .aac
+ - .abc
+ - .ac
+ - .ac3
+ - .adm
+ - .adts
+ - .aff
+ - .ai
+ - .aidl
+ - .aif
+ - .aiff
+ - .am
+ - .amd64
+ - .amr
+ - .ani
+ - .antlr
+ - .apk
+ - .app
+ - .args
+ - .arj
+ - .arm
+ - .arm64
+ - .asciipb
+ - .asf
+ - .asis
+ - .asm
+ - .attr
+ - .avi
+ - .awk
+ - .babelrc
+ - .bat
+ - .bazel
+ - .bc
+ - .bcb
+ - .bdic
+ - .beg
+ - .begin
+ - .bgra
+ - .bin
+ - .BIN
+ - .bmp
+ - .bowerrc
+ - .br
+ - .bsdiff
+ - BUILD
+ - .bz2
+ - .bzl
+ - .c
+ - .cab
+ - .cbor
+ - .cc
+ - .cer
+ - .cfg
+ - .cgi
+ - .clang-tidy
+ - .class
+ - .classes
+ - .classpath
+ - .cmake
+ - .cmd
+ - .cmx
+ - .cnf
+ - .code2flow
+ - .coffee
+ - .conf
+ - .config
+ - .content
+ - .context
+ - .cp
+ - .cpio
+ - .cpp
+ - .crashpad
+ - .crl
+ - .croc
+ - .cron
+ - .crossfile
+ - .crt
+ - .crx
+ - .crx2
+ - .crx3
+ - .cs
+ - .csproj
+ - .csr
+ - .css
+ - .css_t
+ - .csv
+ - .cti
+ - .cur
+ - .cxx
+ - .dart
+ - .dat
+ - .data
+ - .db
+ - .deb
+ - .def
+ - .defs
+ - .der
+ - .dex
+ - .dic
+ - .dict
+ - .diff
+ - .dirs
+ - .disable
+ - .dislocator
+ - .dj
+ - .dll
+ - .dm
+ - .dmg
+ - .doc
+ - .dot
+ - .dox
+ - .doxy
+ - .draft
+ - .dsc
+ - .dsp
+ - .dsw
+ - .dtd
+ - .dummy
+ - .dump
+ - .eac3
+ - .ejs
+ - .el
+ - .elm
+ - .ember-cli
+ - .emf
+ - .empty
+ - .end
+ - .ent
+ - .eot
+ - .eps
+ - .es
+ - .excludes
+ - .exe
+ - .expected
+ - .explain
+ - .export
+ - .exports
+ - .ext
+ - .extjs
+ - .fake
+ - .fallback
+ - .fbs
+ - .fea
+ - .fidl
+ - .filter
+ - .filters
+ - .first
+ - .flac
+ - .flags
+ - .flv
+ - .foo
+ - .fragment
+ - .g
+ - .gdb
+ - .gemspec
+ - .glif
+ - .gn
+ - .gni
+ - .go
+ - .golden
+ - .good
+ - .gpd
+ - .gperf
+ - .gpg
+ - .gradle
+ - .grd
+ - .grdp
+ - .groovy
+ - .gtestjs
+ - .guess
+ - .gyp
+ - .gypi
+ - .gz
+ - .gzip
+ - .h
+ - .handlebars
+ - .hashes
+ - .hbs
+ - .header
+ - .headers
+ - .hevc
+ - .hidden
+ - .hlsl
+ - .hml
+ - .lnk
+ - .log
+ - .lrz
+ - .lst
+ - .lz
+ - .lzma
+ - .lzo
+ - .m
+ - .m2ts
+ - .m32
+ - .m3u8
+ - .m4
+ - .m4a
+ - .make
+ - Makefiles
+ - .mako
+ - .man
+ - .manifest
+ - .manpages
+ - .map
+ - .mc
+ - .md
+ - .menu
+ - .mht
+ - .mhtml
+ - .mingw
+ - .mips
+ - .mips64el
+ - .mipsel
+ - .mjs
+ - .mk
+ - .mkv
+ - .mm
+ - .mojom
+ - .mojomsg
+ - .mon
+ - .morph
+ - .msc
+ - .msg
+ - .msvc
+ - .myspell
+ - .myt
+ - .n
+ - .natvis
+ - .nc
+ - .nexe
+ - .nib
+ - .ninja
+ - .nmake
+ - .nmf
+ - .not-css
+ - .not-html
+ - .notpy
+ - .npmignore
+ - .nsproxy
+ - .nuspec
+ - .odt
+ - .oga
+ - .ogg
+ - .ogv
+ - .old
+ - .onc
+ - .options
+ - .opus
+ - .order
+ - .orf
+ - .otf
+ - .out
+ - .output
+ - .pam
+ - .patch
+ - .pb
+ - .pb_text
+ - .pch
+ - .pcm
+ - .pddm
+ - .pdf
+ - .pdl
+ - .pem
+ - .pfx
+ - .pgm
+ - .php
+ - .pidl
+ - .pins
+ - .pk8
+ - .pkg
+ - .pkgproj
+ - .pkpass
+ - .pl
+ - .plist
+ - .pltsuite
+ - .podspec
+ - .pol
+ - .polymer
+ - .Processor
+ - .proctype
+ - .prop
+ - .properties
+ - .props
+ - .proto
+ - .ps1
+ - .pump
+ - .pvk
+ - .pwg
+ - .py
+ - .pyd
+ - .pydeps
+ - .pyl
+ - .py-str
+ - .qemu
+ - .rar
+ - .rb
+ - .rc
+ - .rdf
+ - .release
+ - .resx
+ - .rgs
+ - .rm
+ - .rpc
+ - .rules
+ - .ruleset
+ - .rz
+ - .s
+ - .S
+ - .sample
+ - .sb
+ - .scons
+ - .scss
+ - .sct
+ - .sctlist
+ - .sdef
+ - .security
+ - .sed
+ - .see_also
+ - .settings
+ - .sh
+ - .sitx
+ - .skeletons
+ - .sln
+ - .snk
+ - .so
+ - .spc
+ - .spec
+ - .sql
+ - .sqlite
+ - .src
+ - .sst
+ - .status
+ - .storyboard
+ - .strings
+ - .sub
+ - .subtest
+ - .sug
+ - .swf
+ - .swift
+ - .sxg
+ - .sym
+ - .syms
+ - .syntax
+ - .tab
+ - .tar
+ - .tcl
+ - .templ
+ - .template
+ - .terms
+ - .test
+ - .testcases
+ - .test-mojom
+ - .tests
+ - .text
+ - .textpb
+ - .textproto
+ - .tlb
+ - .tmpl
+ - .tokencap
+ - .tokenizers
+ - .toml
+ - .ts
+ - .ttc
+ - .ttx
+ - .txt
+ - .TXT
+ - .typemap
+ - .types
+ - .unitjs
+ - .unix
+ - .usdz
+ - .vanilla
+ - .ver
+ - .version
+ - .visualizer
+ - .vpython
+ - .vsct
+ - .vsix
+ - .vtt
+ - .vue
+ - .wasm
+ - .wat
+ - .wbn
+ - .webarchive
+ - .whitelist
+ - .woff
+ - .woff2
+ - .wrong
+ - .wxs
+ - .xaml
+ - .xcf
+ - .xht
+ - .xhtml
+ - .xib
+ - .xls
+ - .xmb
+ - .xml
+ - .xpm
+ - .xsd
+ - .xsl
+ - .xslt
+ - .xtb
+ - .xul
+ - .xz
+ - .y
+ - .yaml
+ - .yapf
+ - .yml
+ - .yuv
+ - .Z
+ - .zoneinfo
+ - .zoo
+ - .zOS
+ - .ztf
+ - .zuc
+ - .zzz
+
+
+
+# A "mega commit" is a commit that touched thousands of files
+# We ignore getting file information for these commits as they
+# bog down VHP unnnecessarily. Instead, we add a note here
+mega_commits:
+- commit: c14d891d44f0afff64e56ed7c9702df1d807b1ee
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    It is the original import of the Chromium source tree in 2008, and involves
+    copying over 300k files.To see more about it, head over to:
+    https://chromium.googlesource.com/chromium/src/+/c14d891d44f0afff64e56ed7c9702df1d807b1ee. This was the original
+- commit: 1c8e1a7719e9d223cc84e838c9a31a0210f5878b
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    It was a 2016 commit that was just a reformatting of the code.
+- commit: 584cd5cbd7be997400ccb8db24ae5410b0b88117
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    This was the original import of the third_party/ folder in the repo
+- commit: 09911bf300f1a419907a9412154760efd0b7abc3
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    This was the original import of the chrome/ folder in the repo
+- commit: ebff986b4bd9cbe0b0328adaf86dc69964945173
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    This commit was when they converted their testing framework
+- commit: 91e7e108ecd4ca910a005cb0924e174a8b0e2db3
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    This was a refactoring in how #includes were handled
+- commit: 07fa7abcaf0cc4a2426bbbd18864a7772ffa3f96
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    They were moving Source/WebCore to Source/core. Nothing particularly interesting with this commit.
+- commit: 7d791652c7ede4209a2014d885148e2713f49bce
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    They moved browser/cocoa to browser/ui/cocoa
+- commit: 2729e442b1172c5094503a03fe356c8580bb919d
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    They were switching to standard integer types in chrome/
+- commit: 7497635a7cfdae2866d2aa7a3bd2894c895b8360
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    They imported a lot of android specific code that was added to many folders.
+- commit: 49f8882b47d5da2b5b689b1df188c70a8034044d
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    Moving GraphcisContext and dependencies from core to platform. All font-related classes have been moved to fonts.
+    Image related classes have still to be moved to images. Scroll related classes have been moved to scroll. Some Skia
+    classes have been moved to graphics/skia. Some other code cleanup was done.
+- commit: b104b771c129e5f5eb68bfa06ca6a2fc243b00d3
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    They had updated sqlite to 3.7.3.
+- commit: eba7abc84aec970ce85a25cf7b655e424918a3e0
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    Extract Modules from WebCore. This moves Source/WebCore/Modules to Source/modules.
+- commit: 71331253d6537b9409518dec2368388c5d73cb94
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    This focuses on modules/ to rename methods that are named foo() and that return a Foo*, which
+    will have collisions when foo() is renamed to Foo() in chromium style.
+- commit: 07fa7abcaf0cc4a2426bbbd18864a7772ffa3f96
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    It was essentially moving Source/WebCore to Source/core.
+
+
+# An "origin commit" is a commit that is the beginning of the project
+origin_commits:
+- commit: c14d891d44f0afff64e56ed7c9702df1d807b1ee
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    It is the original import of the Chromium source tree in 2008, and involves
+    copying over 300k files.To see more about it, head over to:
+    https://chromium.googlesource.com/chromium/src/+/c14d891d44f0afff64e56ed7c9702df1d807b1ee. This was the original
+- commit: 584cd5cbd7be997400ccb8db24ae5410b0b88117
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    This was the original import of the third_party/ folder in the repo
+- commit: 09911bf300f1a419907a9412154760efd0b7abc3
+  note: |
+    **Note from VHP curators**: this commit is not fully imported into VHP.
+    This was the original import of the chrome/ folder in the repo
+
+# These filepaths should not be included in mining analysis
+exclude_filepaths:
+  - DEPS
