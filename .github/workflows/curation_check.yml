@@ -18,3 +18,4 @@ jobs:
       run: |
         rspec --no-color -f failures spec/yaml_parses_spec.rb && \
         rspec --no-color -f failures spec/cve_spec.rb
+
