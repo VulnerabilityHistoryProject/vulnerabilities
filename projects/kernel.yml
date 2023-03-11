@@ -454,6 +454,166 @@ source_code_extensions:
 # We ignore getting file information for these commits as they
 # bog down VHP unnnecessarily. Instead, we add a note here
 mega_commits:
+- commit: "27a884dc3cb63b93c2b3b643f5b31eed5f8a4d26"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "cdd6c482c9ff9c55475ee7392ec8f672eddb7be6"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "e8edc6e03a5c8562dc70a6d969f732bdb355a7e7"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "d626f62b11e00c16e81e4308ab93d3f13551812a"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "6038f373a3dc1f1c26496e60b6c40b164716f07e"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "496ad9aa8ef448058e36ca7a787c61f2e63f0f54"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "eddc9ec53be2ecdbf4efe0efd4a83052594f0ac0"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "3db05fea51cdb162cfa8f69e9cfb9e228919d2a9"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "d7e09d0397e84eefbabfd9cb353221f3c6448d83"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "b67bfe0d42cac56c512dd5da4b1b347a23f4b70a"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "90ab5ee94171b3e28de6bb42ee30b527014e0be7"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "09cbfeaf1a5a67bfb3201e0c83c810cecb2efa5a"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "b4ca761577535b2b4d153689ee97342797dfff05"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "25985edcedea6396277003854657b5f3cb31a628"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "5955102c9984fa081b2d570cfac75c97eecf8f3b"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "4be44fcd3bf648b782f4460fd06dfae6c42ded4b"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "b229cf92eee616c7cb5ad8cdb35a19b119f00bc8"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "860e9538a9482bb84589f7d0718a7e6d0a944d58"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "b595076a180a56d1bb170e6eceda6eb9d76f4cd3"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "95c961747284a6b83a5e2d81240e214b0fa3464d"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "2b0143b5c986be1ce8408b3aadc4709e0a94429d"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "5510b3c2a173921374ec847848fb20b98e1c698a"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "c0decac19da3906d9b66291e57b7759489e1170f"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "4b6f5d20b04dcbc3d888555522b90ba6d36c4106"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "7725ccfda59715ecf8f99e3b520a0b84cc2ea79e"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "4562236b3bc0a28aeb6ee93b2d8a849a4c4e1c7c"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "e99e88a9d2b067465adaa9c111ada99a041bef9a"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "96d4f267e40f9509e8a66e2b39e8b95655617693"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "8cb081746c031fb164089322e2336a0bf5b3070c"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "df561f6688fef775baa341a0f5d960becd248b11"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "a24d22b225ce158651378869a6b88105c4bdb887"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
+- commit: "af82455f7dbd9dc20244d80d033721b30d22c065"
+  note:  |
+    **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
+
+    Linux kernel history dates back long before this date, but this is the "beginning of time" for the purposes of the Vulnerability History Project.
 - commit: 1da177e4c3f41524e886b7f1b8a0c1fc7321cac2
   note:  |
     **Note from VHP curators**: this commit is not fully imported into VHP. This is the original commit to the Linux kernel, for version 2.6.12-rc2.
