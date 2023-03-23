@@ -1,8 +1,8 @@
 name: Linux Kernel
 fullname: Linux Kernel
 subdomain: kernel
-bg_color: '#33290a'
-fg_color: '#f0ede3'
+bg_color: '#e2b204'
+fg_color: '#33290a'
 project_url: https://kernel.org/
 description: |
   The Linux kernel is the basis for all Linux operating system distributions. From their website: "Linux is a clone of the operating system Unix, written from scratch by Linus Torvalds with assistance from a loosely-knit team of hackers across the Net."
