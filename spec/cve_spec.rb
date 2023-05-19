@@ -81,7 +81,7 @@ describe 'CVE yml file' do
           end
         end
 
-        it 'has properly formatted subsystem names' do
+        it 'should have properly formatted subsystem names' do
           if at_curation_level?(vuln, 2)
             expect(vuln[:subsystem][:name].to_s).not_to be_empty
             subsystem_str = Array[vuln[:subsystem][:name]].join
@@ -90,11 +90,11 @@ describe 'CVE yml file' do
         end
       end
 
-      it 'has an empty nickname or under 30 chars' do
+      it 'should have an empty nickname or under 30 chars' do
         expect(vuln[:nickname].to_s.length).to be <= 30
       end
 
-      it 'has lessons properly formatted' do
+      it 'should have lessons be true, false, or empty' do
         expect(vuln[:lessons][:defense_in_depth][:applies]).to be(true).
                                                                or(be(false)).
                                                                or(be_nil)
