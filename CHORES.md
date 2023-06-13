@@ -48,6 +48,7 @@ For each case study, look for new vulnerabilities.
 
 ## Merge PR curations
 
+  * Before starting, run `rails data:dev_all` and make sure it finishes cleanly (warnings are ok).
   * Review the vulnerabilities pull requests over at https://github.com/VulnerabilityHistoryProject/vulnerabilities/pulls
   * For each PR:
     * Check that the PR is passing and does not have a `dont-merge-yet` label on it
