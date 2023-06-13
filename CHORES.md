@@ -46,10 +46,20 @@ For each case study, look for new vulnerabilities.
   * Each of our update scripts are a little different in what gets updated - bug IDs, fix commits, etc.
   * If there were no new vulnerabilities recently, no need to do the other things
 
-## Review PR backlog
+## Merge PR curations
 
-  * Review the vulnerabilities pull requests
-  * Every PR should be either merged, or tagged "needs-discussion"
+  * Review the vulnerabilities pull requests over at https://github.com/VulnerabilityHistoryProject/vulnerabilities/pulls
+  * For each PR:
+    * Check that the PR is passing and does not have a `dont-merge-yet` label on it
+    * Check that the PR is intended to merge into `VulnerabilityHistoryProject:dev` (not `master`).
+        * If it's not, hit "Edit" in the upper-right and change the base branch to `dev`.
+        * It doesn't matter what their branch was called. This will cause the PR to re-run its status checks
+    * If the green button shows `Squash and Merge`, press it.
+        * You might need to hit `Update Branch`, but usually you won't have to
+  * About every 5 PRs or so, go over to your `vulnerability-history` repo and run `rails data:dev_all`
+    * Note: this is just `rails data:all` but pulling form the `vulnerablities` dev branch instead.
+    * You'll likely get more warnings than normal, but as long as the build finishes without error you're good.
+
 
 ## `vhp loadcommits` - save commit information
 
