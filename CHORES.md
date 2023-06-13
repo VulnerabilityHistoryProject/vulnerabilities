@@ -79,13 +79,13 @@ This can be a slow operation - sometimes overnight. Alternatively, you can use o
 
 * Make sure you have the latest source repo. A clean `git clone` can sometimes be easier than `git pull` if the repo is huge
 * Run `vhp weeklies`, here's an example:
-    `vhp weeklies --repo ../tomcat --mining ../vhp-mining --project tomcat`
+    `vhp weeklies --repo=../tomcat --mining=../vhp-mining --project=tomcat`
 * Inspect the output that everything is as you think it is
 * Commit to the `dev` branch of the vulnerabilties repo
 * Push to GitHub
 * Make sure the CI builds properly for the specs and `data:all`
 
-CLI specifics can be found at `vhp weeklies -h` or `vhp help weeklies`
+CLI specifics can be found at `vhp help weeklies`
 
 ## `vhp nvd`
 
@@ -100,7 +100,7 @@ Details are found in the CLI docs: `vhp nvd -h`
 
 ## `vhp new`
 
-If we want to create a new vulnerability and look up basic information as in `vhp nvd`, we can run `vhp new`. See `vhp new -h` for options.
+If we want to create a new vulnerability and look up basic information as in `vhp nvd`, we can run `vhp new`. See `vhp help new` for options.
 
 ## VCC identifying
 
