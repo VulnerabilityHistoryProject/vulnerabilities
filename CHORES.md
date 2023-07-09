@@ -46,10 +46,21 @@ For each case study, look for new vulnerabilities.
   * Each of our update scripts are a little different in what gets updated - bug IDs, fix commits, etc.
   * If there were no new vulnerabilities recently, no need to do the other things
 
-## Review PR backlog
+## Merge PR curations
 
-  * Review the vulnerabilities pull requests
-  * Every PR should be either merged, or tagged "needs-discussion"
+  * Before starting, run `rails data:dev_all` and make sure it finishes cleanly (warnings are ok).
+  * Review the vulnerabilities pull requests over at https://github.com/VulnerabilityHistoryProject/vulnerabilities/pulls
+  * For each PR:
+    * Check that the PR is passing and does not have a `dont-merge-yet` label on it
+    * Check that the PR is intended to merge into `VulnerabilityHistoryProject:dev` (not `master`).
+        * If it's not, hit "Edit" in the upper-right and change the base branch to `dev`.
+        * It doesn't matter what their branch was called. This will cause the PR to re-run its status checks
+    * If the green button shows `Squash and Merge`, press it.
+        * You might need to hit `Update Branch`, but usually you won't have to
+  * About every 5 PRs or so, go over to your `vulnerability-history` repo and run `rails data:dev_all`
+    * Note: this is just `rails data:all` but pulling form the `vulnerablities` dev branch instead.
+    * You'll likely get more warnings than normal, but as long as the build finishes without error you're good.
+
 
 ## `vhp loadcommits` - save commit information
 
@@ -79,13 +90,13 @@ This can be a slow operation - sometimes overnight. Alternatively, you can use o
 
 * Make sure you have the latest source repo. A clean `git clone` can sometimes be easier than `git pull` if the repo is huge
 * Run `vhp weeklies`, here's an example:
-    `vhp weeklies --repo ../tomcat --mining ../vhp-mining --project tomcat`
+    `vhp weeklies --repo=../tomcat --mining=../vhp-mining --project=tomcat`
 * Inspect the output that everything is as you think it is
 * Commit to the `dev` branch of the vulnerabilties repo
 * Push to GitHub
 * Make sure the CI builds properly for the specs and `data:all`
 
-CLI specifics can be found at `vhp weeklies -h` or `vhp help weeklies`
+CLI specifics can be found at `vhp help weeklies`
 
 ## `vhp nvd`
 
@@ -100,7 +111,7 @@ Details are found in the CLI docs: `vhp nvd -h`
 
 ## `vhp new`
 
-If we want to create a new vulnerability and look up basic information as in `vhp nvd`, we can run `vhp new`. See `vhp new -h` for options.
+If we want to create a new vulnerability and look up basic information as in `vhp nvd`, we can run `vhp new`. See `vhp help new` for options.
 
 ## VCC identifying
 

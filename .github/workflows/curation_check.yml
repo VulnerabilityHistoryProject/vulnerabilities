@@ -17,5 +17,5 @@ jobs:
     - name: Run YML and editorial checkers
       run: |
         rspec --no-color -f failures spec/yaml_parses_spec.rb && \
-        rspec --no-color -f failures spec/cve_spec.rb
+        rspec --no-color -f VHPFormatter spec/cve_spec.rb
 

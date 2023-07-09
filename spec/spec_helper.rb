@@ -1,5 +1,6 @@
 require 'rspec'
 require 'date'
+require_relative 'vhp_formatter'
 
 RSpec.configure do |config|
   config.tty = true
