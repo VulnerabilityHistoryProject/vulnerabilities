@@ -61,6 +61,46 @@ For each case study, look for new vulnerabilities.
     * Note: this is just `rails data:all` but pulling form the `vulnerablities` dev branch instead.
     * You'll likely get more warnings than normal, but as long as the build finishes without error you're good.
 
+### Tracking Down Exceptions
+
+Suppose you are merging curations and `rails data:dev_all` breaks. Try the simple stuff first:
+
+  * Do you have the latest `vulnerability-history`? Make sure you pull from master and you don't have any edits to it locally that would break things
+  * Maybe we updated the database schema. Run `rails db:schema:load`. This fixes issues like "undefined table" and other database stuff.
+
+After that, maybe there's a specific YML that has a problem. Here's an example:
+
+```
+rails aborted!
+NoMethodError: undefined method `split' for 2.1:Float
+C:/code/vulnerability-history/lib/taggers/CVSS_tagger.rb:83:in `block in apply_tags'
+C:/code/vulnerability-history/lib/taggers/CVSS_tagger.rb:81:in `apply_tags'
+C:/code/vulnerability-history/lib/data_builder.rb:157:in `block in generate_tags'
+C:/code/vulnerability-history/lib/data_builder.rb:153:in `each'
+C:/code/vulnerability-history/lib/data_builder.rb:153:in `generate_tags'
+C:/code/vulnerability-history/lib/tasks/data.rake:47:in `block (2 levels) in <main>'
+Tasks: TOP => data:dev_all => data:all => data:build
+```
+
+This was an uncaught exception. There's something wrong about a YML, so let's first narrow down which YML. Let's go into `vulnerabilty-history` and temporarily add some exception catchers around that code. You can see the offending code from the stacktrace above is `CVSS_tagger.rb`, so open that file to the line.
+
+Wrap this code with a `begin` and `rescue` block (Ruby's exception handling syntax). This is the one I used for the above error:
+
+```ruby
+Vulnerability.all.each do |v|
+  begin
+    # code does some stuff that results in an error
+  rescue => e
+    @logger.warn("Exception on #{v.cve}. #{e.message}")
+  end
+end
+```
+
+If `@logger` isn't defined, you can also use `puts` to just print to the console. The main goal here is to figure out which YML it is. We can refine the error handling later.
+
+In the above case, the CVSS was filled in (incorrectly) as a `float` when it should be the full CVSS string. So once we knew the YAMLs, we just fixed the YAMLs and pushed the changes. We also updated the integrity tests in `vulnerabilities` to catch this in the future.
+
+
 
 ## `vhp loadcommits` - save commit information
 
