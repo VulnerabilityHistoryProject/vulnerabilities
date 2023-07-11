@@ -130,6 +130,10 @@ describe 'CVE yml file' do
                                                                or(be_nil)
       end
 
+      it 'should have a CVSS scoring vector string with colons or be empty' do
+        expect(vuln[:CVSS].to_s).to(match(/.*:.*/).or(be_empty))
+      end
+
     end
 
   end
