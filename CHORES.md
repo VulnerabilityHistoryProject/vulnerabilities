@@ -155,7 +155,7 @@ If we want to create a new vulnerability and look up basic information as in `vh
 
 ## VCC identifying
 
-TBD
+TBD. You can see how we use archeogit in the migration files if you want to adapt from there.
 
 # Subsystem normalization
 
