@@ -187,6 +187,27 @@ When you find a correction, find the original YML file(s) that reference the sub
 
 Push your corrections to a new branch and make a pull request.
 
+
+## Getting SWEN-331 CVEs
+
+* Make sure you have the latest `vulnerabilities` repo
+* Make sure it's on the correct branch (e.g. dev or master depending on the situation)
+* Make sure you have the latest shepherd tools with `vhp version`
+* Check up on how to use `vhp ready` with `vhp help ready`
+
+Run `vhp ready`. Example runs:
+
+`vhp ready --project=kernel --min-vccs=1 --max-level=1`
+
+Once you're happy with the output, pipe it to a CSV file, e.g.
+
+`vhp ready --project=kernel --min-vccs=1 --max-level=1 --full > tmp/kernel_331_cves.csv`
+
+The defaults of fixes and vccs being between 1 and 5 are pretty sensible, so this works:
+
+`vhp ready --project=kernel --full > tmp/kernel_331_cves.csv`
+
+
 # Useful Tips and Tools
 
 * SSH: for working on the servers, you'll need an SSH client. We recommend MobaXTerm or PuTTY for Windows, or just the terminal for Mac. MobaXTerm has a ton of nice features.
@@ -195,3 +216,4 @@ Push your corrections to a new branch and make a pull request.
     * Feel free to use `tmux` to detach your session so you can log out and have your session still running
 * Get the Windows "Terminal" app from the store - learn more https://github.com/microsoft/terminal
 * Research computing (TBD - very useful too)
+
