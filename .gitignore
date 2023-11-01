@@ -4,4 +4,3 @@ tmp/*
 .DS_Store
 .byebug_history
 .history/
-.prettierignore
