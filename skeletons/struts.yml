@@ -36,7 +36,7 @@ announced_instructions: |
 announced:
 
 description_instructions: |
-  You can get an initial description from the CVE entry on cve.mitre.org. These
+  You can get an initial description from the CVE entry on cve.org. These
   descriptions are a fine start, but they can be kind of jargony.
   Rewrite this description in your own words. Make it interesting and easy to
   read to anyone with some programming experience. We can always pull up the NVD

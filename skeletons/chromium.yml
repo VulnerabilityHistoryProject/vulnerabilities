@@ -34,7 +34,7 @@ published_instructions: |
   Please enter your date in YYYY-MM-DD format.
 published:
 description_instructions: |
-  You can get an initial description from the CVE entry on cve.mitre.org. These
+  You can get an initial description from the CVE entry on cve.org. These
   descriptions are a fine start, but they can be kind of jargony.
 
   Rewrite this description in your own words. Make it interesting and easy to
@@ -258,7 +258,7 @@ mistakes:
     engineering industry would find interesting.
   answer:
 CWE_instructions: |
-  Please go to http://cwe.mitre.org and find the most specific, appropriate CWE
+  Please go to https://cwe.mitre.org and find the most specific, appropriate CWE
   entry that describes your vulnerability. We recommend going to
   https://cwe.mitre.org/data/definitions/699.html for the Software Development
   view of the vulnerabilities. We also recommend the tool
